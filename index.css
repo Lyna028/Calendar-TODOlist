@@ -1,0 +1,520 @@
+/* agit comme variable global de couleure*/
+:root {
+    --couleur-app : #b38add;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(229, 235, 248);
+}
+
+.app {
+    position: relative;
+    width: 1200px;
+    min-height: 850px;
+    margin: 0 auto;
+    padding : 5px;
+    color: white;
+    display: flex;
+    border-radius: 10px;
+    background-color: rgb(62, 8, 112);
+}
+
+.gauche {
+    width: 60%;
+    padding : 20px;
+}
+
+.calendrier {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: rgb(135, 112, 146);
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+}
+
+/* Pour créer un effet de perspective, un corner */
+.calendrier::before,
+.calendrier::after {
+    content : "";
+    position: absolute;
+    top : 2%;
+    left : 100%;
+    width: 12px;
+    height: 96%;
+    border-radius: 0 5px 5px 0;
+    background-color: rgb(207, 206, 206);
+}
+
+.calendrier::before {
+    height: 92%;
+    top : 4%;
+    left: calc(100% + 12px);
+    background-color: rgb(164, 163, 163);
+}
+
+.calendrier .mois {
+    width: 100%;
+    height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 75px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.calendrier .mois .precedant,
+.calendrier .mois .suivant {
+    cursor : pointer;
+}
+
+.calendrier .mois .precedant:hover,
+.calendrier .mois .suivant:hover {
+    color: var(--couleur-app);
+}
+
+.calendrier .jours {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding : 0 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.jours div {
+    width : 14.28%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendrier .dates {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.calendrier .dates .date {
+    width: 14.28%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color : var(--couleur-app);
+    border : 1px solid #f5f5f5;
+}
+
+.calendrier .date:not(.mois-avant, .mois-apres):hover {
+    color: white;
+    background-color: var(--couleur-app);
+}
+
+.calendrier .dates .mois-avant,
+.calendrier .dates .mois-apres {
+    color: rgb(137, 136, 136);
+}
+
+.calendrier .dates .selectionnee {
+    position: relative;
+    font-size: 2rem;
+    color: white;
+    background-color: var(--couleur-app);
+}
+
+.calendrier .dates .selectionnee::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 10px 2px var(--couleur-app);
+}
+
+.calendrier .dates .evenement {
+    position: relative;
+}
+
+.calendrier .dates .aujourdhui {
+    font-size: 2rem;
+}
+
+.calendrier .dates .evenement::after {
+    content : "";
+    position: absolute;
+    bottom: 10%;
+    left : 50%;
+    width: 75%;
+    height: 6px;
+    border-radius: 30px;
+    transform: translate(-50%);
+    background-color: var(--couleur-app);
+}
+
+.calendrier .date:hover.evenement::after {
+    background-color: white;
+}
+
+.calendrier .selectionnee.evenement::after {
+    background-color: white;
+    bottom: 20%;
+}
+
+.calendrier .recherche {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    color: var(--couleur-app);
+}
+
+.calendrier .recherche .recherche-mois {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid var(--couleur-app);
+}
+
+.calendrier .recherche .recherche-mois input {
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 0 20px;
+    color: var(--couleur-app);
+    border-radius: 5px;
+}
+
+.calendrier .recherche button {
+    padding: 5px 10px;
+    height: 30px;
+    border: 0.5px solid var(--couleur-app);
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--couleur-app);
+}
+
+.calendrier .recherche .recherche-mois button {
+    border : none;
+    border-left: 1px solid var(--couleur-app);
+    border-radius: 0;
+}
+
+.calendrier .recherche button:hover {
+    color: white;
+    background-color: var(--couleur-app);
+    border-radius: 0;
+}
+
+.droite {
+    position: relative;
+    width: 40%;
+    min-height: 100%;
+    padding: 20px 0;
+
+}
+
+.droite .date-aujourdhui {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    padding-left: 70px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+.date-aujourdhui .evenement-date {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #f2bef797;
+
+}
+
+.date-aujourdhui .evenement-jour {
+    font-family: "Poppins", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+.evenements {
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+}
+
+.evenements .evenement {
+    position: relative;
+    width: 95%;
+    min-height: 70px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 20px;
+    padding-left: 50px;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgb(88, 38, 131), transparent);
+}
+
+.evenements .evenement:nth-child(even) {
+    background: transparent;
+}
+
+.evenements .evenement:hover {
+    background: linear-gradient(90deg, var(--couleur-app), transparent);
+}
+
+.evenements .evenement .titre {
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+.evenements .evenement .titre .evenement-titre {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+.evenements .evenement i {
+    color: var(--couleur-app);
+    font-size: 0.5rem;
+    padding-right: 10px;
+}
+
+.evenements .evenement:hover i  {
+    color: white;
+}
+
+.evenements .evenement .evenement-horaire {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #f2bef790;
+    margin-left: 15px;
+    margin-top:5px;
+}
+
+.evenements .evenement:hover .evenement-horaire  {
+    color : white;
+}
+
+.evenements .evenement::after {
+    content: "✓";
+    position: absolute;
+    top: 10%;
+    right: 0;
+    font-size: 2rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.3;
+    columns: var(--couleur-app);
+    transform: translateY(-50%);
+}
+
+.evenements .event:hover::after {
+    display: flex;
+}
+
+.evenements .sans-evenement {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 30;
+    color: #f2bef797;
+}
+
+.evenements .sans-evenement h3 {
+    font-family: "Poppins", sans-serif;
+}
+
+.ajout-evenement-tab {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    width: 80%;
+    max-height: 0;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: white;
+    transform: translateX(-50%);
+    transition: max-height 0.5s;
+}
+
+.ajout-evenement-tab.active {
+    max-height: 300px;
+}
+
+.ajout-evenement-header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    color: #3f106f;
+    border-bottom: 1px solid #ecebeb;
+}
+
+.ajout-evenement-header .titre {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.ajout-evenement-header .fermer {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.ajout-evenement-header .fermer:hover {
+    color: var(--couleur-app);
+}
+
+.ajout-evenement-contenu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px;
+}
+
+.ajout-evenement-contenu .ajout-evenement-input {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.ajout-evenement-contenu .ajout-evenement-input input {
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ecebeb;
+    padding: 0 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #3f106f;
+}
+
+.ajout-evenement-contenu .ajout-evenement-input input::placeholder {
+    color: #a5a5a5;   
+}
+
+.ajout-evenement-contenu .ajout-evenement-input input:focus {
+    border-color: var(--couleur-app);
+}
+
+.ajout-evenement-contenu .ajout-evenement-input input:focus::placeholder {
+    color: var(--couleur-app);
+}
+
+.ajout-evenement-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px 3px 0px;
+}
+
+.ajout-evenement-footer .ajout-evenement-btn {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background-color: var(--couleur-app);
+    outline: none;
+    border-radius: 8px;
+    padding: 8px 20px;
+    align-items: center;
+    border: 1px solid var(--couleur-app);
+}
+
+.ajout-evenement-footer .ajout-evenement-btn:hover {
+    color: var(--couleur-app);
+    background-color: transparent;
+    border: 1px solid;
+    border-color: var(--couleur-app);
+}
+
+.ajout-evenement {
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: #eedcff;
+    border: 2px solid #eedcff;
+    background-color: transparent;
+    opacity: 0.5;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.ajout-evenement:hover {
+    opacity: 1;        
+}
+
+.ajout-evenement i {
+    pointer-events: none;
+}

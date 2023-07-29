@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel = "stylesheet" href = "index.css" >
+    <title>Calendrier</title>
+</head>
+<body>
+    <div class = "app">
+        <div class = "gauche">
+            <div class = "calendrier">
+                <div class = "mois">
+                    <strong class="fas fa-angle-left precedant"></strong>
+                    <div class="dateCourante"></div>
+                    <strong class="fas fa-angle-right suivant"></strong>
+                </div>
+                <div class="jours">
+                    <div>Lun</div>
+                    <div>Mar</div>
+                    <div>Mer</div>
+                    <div>Jeu</div>
+                    <div>Ven</div>
+                    <div>Sam</div>
+                    <div>Dim</div>
+                </div>
+                <div class="dates">
+                </div>
+                <div class="recherche">
+                    <div class="recherche-mois">
+                        <input type="text" placeholder="mm/yyyy" class="mois-input">
+                        <button class="recherche-btn">Rechercher</button>
+                    </div>
+                    <button class="aujourdhui-btn">Aujourd'hui</button>
+                </div>
+            </div>
+        </div>
+        <div class = "droite">
+            <div class="date-aujourdhui">
+                <div class="evenement-jour">Ven</div>
+                <div class="evenement-date">29 Juin 2023</div>
+            </div>
+            <div class="evenements">
+            </div>
+            <div class="ajout-evenement-tab">
+                <div class="ajout-evenement-header">
+                    <div class="titre">Ajouter Evenement</div>
+                    <i class="fas fa-times fermer"></i>
+                </div>
+                <div class="ajout-evenement-contenu">
+                    <div class="ajout-evenement-input">
+                        <input type="text" placeholder="Nom de l'événement" class="nom-evenement">
+                    </div>
+
+                    <div class="ajout-evenement-input">
+                        <input type="text" 
+                        placeholder="Heure du début de l'événement" 
+                        class="heure-evenement-debut">
+                    </div>
+
+                    <div class="ajout-evenement-input">
+                        <input type="text" 
+                        placeholder="Heure de fin de l'événement" 
+                        class="heure-evenement-fin">
+                    </div>
+
+                    <div class="ajout-evenement-footer">
+                        <button class="ajout-evenement-btn">Ajouter événement</button>
+                    </div>
+                </div>
+            </div>
+            <button class="ajout-evenement">
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src = "index.js"></script>
+</body>
+</html>
