@@ -1,5 +1,7 @@
 # Calendrier & TODO liste
 
+![](AppercuAppli.png)
+
 ## Appercu
 Cette application web est un calendrier dynamique accompagné d'une TODO liste, conçu pour aider les utilisateurs à organiser leurs emplois du temps et leurs tâches de manière efficace. Réalisé avec JavaScript, HTML et CSS, ce projet offre une interface intuitive et interactive où les utilisateurs peuvent gérer facilement leurs activités quotidiennes et planifier à l'avance.
 
