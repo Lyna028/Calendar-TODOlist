@@ -1,12 +1,12 @@
-# Calendar and TODO-list web application
+# Calendrier & TODO liste
 
-## Overview
-This web application is a dynamic and user-friendly Calendar and TODO List designed to help users organize their schedules and tasks efficiently. Built using JavaScript, HTML, and CSS, this project provides an intuitive interface where users can easily manage their daily activities and plan ahead.
+## Appercu
+Cette application web est un calendrier dynamique accompagné d'une TODO liste, conçu pour aider les utilisateurs à organiser leurs emplois du temps et leurs tâches de manière efficace. Réalisé avec JavaScript, HTML et CSS, ce projet offre une interface intuitive et interactive où les utilisateurs peuvent gérer facilement leurs activités quotidiennes et planifier à l'avance.
 
-## Features 
+## Fonctionnalités
 
-- Interactive Calendar: The application showcases a clean and responsive calendar that allows users to navigate through various months and years effortlessly. It provides a clear visualization of events, deadlines, and appointments.
+- Calendrier Interactif : L'application présente un calendrier clair et réactif qui permet aux utilisateurs de naviguer facilement entre les différents mois et années. Il offre une visualisation claire des événements, des échéances et des rendez-vous.
 
-- TODO List Integration: The application includes a seamless integration of a TODO list, empowering users to jot down tasks, set priorities, and mark them as completed.
+- Intégration de la TODO liste : L'application comprend une intégration fluide d'une liste TODO, permettant aux utilisateurs de noter des tâches, de définir des priorités et de les marquer comme terminées.
 
-- Responsive Design: The interface adapts elegantly to various screen sizes, making it accessible and user-friendly on both desktop and mobile devices.
+- Conception Réactive : L'interface s'adapte de manière élégante à différentes tailles d'écran, la rendant accessible et conviviale aussi bien sur ordinateur que sur appareils mobiles.
